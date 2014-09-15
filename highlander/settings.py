@@ -36,6 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'core',
+    'registration',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,7 +54,11 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'highlander.urls'
 
 WSGI_APPLICATION = 'highlander.wsgi.application'
-
+ACCOUNT_ACTIVATION_DAYS = 1
+EMAIL_HOST='localhost'
+EMAIL_PORT=1023
+EMAIL_HOST_USER='username'
+EMAIL_HOST_PASSWORD='password'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -59,7 +66,7 @@ WSGI_APPLICATION = 'highlander.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'highlander.db'),
     }
 }
 
@@ -69,7 +76,7 @@ DATABASES = {
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'Europe/London'
 USE_I18N = True
 
 USE_L10N = True
@@ -81,3 +88,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,'templates'),
+    os.path.join(BASE_DIR,'templates/highlander'),
+)
+
+STATICFILES_DIRS = (
+               os.path.join(BASE_DIR,'static/css'),
+               )
+
+LOGIN_URL = '/'

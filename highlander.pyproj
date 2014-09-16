@@ -163,6 +163,7 @@
   <ItemGroup>
     <Content Include="core\static\core\style.css" />
     <Content Include="core\templates\core\activity.html" />
+    <Content Include="core\templates\core\activity_entries.html" />
     <Content Include="core\templates\core\index.html" />
     <Content Include="registration\locale\ar\LC_MESSAGES\django.mo" />
     <Content Include="registration\locale\ar\LC_MESSAGES\django.po" />

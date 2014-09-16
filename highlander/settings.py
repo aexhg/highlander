@@ -94,7 +94,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR,'templates/highlander'),
 )
 
-STATICFILES_DIRS = (
+STATICFILES_DIRS  = (
                os.path.join(BASE_DIR,'static/css'),
                )
 
